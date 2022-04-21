@@ -1,6 +1,6 @@
 # Tehmart scraping by Scrapy
 
-I made this project to try [Scrapy](https://scrapy.org/).
+I made this project by [Scrapy](https://scrapy.org/).
 
 product :
 
@@ -30,3 +30,15 @@ product :
 ## Scrap
 
     scrapy crawl tehmart
+
+## Save inside specific file
+
+    scrapy crawl tehmart -O filename.json
+    or
+    scrapy crawl tehmart -O filename.csv
+    or
+    scrapy crawl tehmart -O filename.xml
+
+#### There is another way to save file like json file 
+    scrapy crawl tehmart -O filename.jl
+This format better than json ...

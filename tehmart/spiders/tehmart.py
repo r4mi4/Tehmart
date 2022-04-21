@@ -10,6 +10,7 @@ class TehmartSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
+        # get all link
         le = LinkExtractor()
         for link in le.extract_links(response):
             if '/product/' in link.url:
@@ -19,14 +20,14 @@ class TehmartSpider(scrapy.Spider):
         for product in response.xpath('//*[@id="productsList"]/div/div/div/a'):
             url = product.xpath('@href').get()
             yield response.follow(url, self.parse_product)
+        # get pagination link
         next_page = response.xpath('//li[@class="pagination-next"]/a/@href').get()
         if next_page is not None:
             yield response.follow(next_page, self.parse_genre)
 
     def parse_product(self, response):
         items = TehmartItem()
-        items['name'] = response.xpath(
-            '//*[(@id = "productInfoName")]/text()').get()
+        items['name'] = response.xpath('//*[(@id = "productInfoName")]/text()').get()
         items['price'] = response.xpath(
             '//*[contains(concat( " ", @class, " " ), concat( " ", "productSpecialPrice", " " ))]/text()').get()
         items['price_before_discount'] = response.xpath(
