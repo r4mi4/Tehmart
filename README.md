@@ -8,6 +8,8 @@ product :
         "name": "پاد سیستم VAPORESSO مدل ZERO نقره ای",
         "price": "5,350,000ریال", 
         "price_before_discount": "6,800,000ریال",
+        "image_link": "https://www.tehmart.ir/media/uploads/catalog/default/product_154_1628600412_14505.jpg",
+        "page_link": "https://www.tehmart.ir/product-154/%D9%BE%D8%A7%D8%AF-%D8%B3%DB%8C%D8%B3%D8%AA%D9%85-smok-%D9%85%D8%AF%D9%84-novo-%D8%B3%D9%81%DB%8C%D8%AF",
         "description": "\nپاد سیستم VAPORESSO  مدل ZERO ...",
         "specifications": {"توان خروجی": "9 , 10.5 , 12.5 وات", "جنس": "سری(Pod) PCTG"}
     }
