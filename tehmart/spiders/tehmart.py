@@ -32,6 +32,8 @@ class TehmartSpider(scrapy.Spider):
             '//*[contains(concat( " ", @class, " " ), concat( " ", "productSpecialPrice", " " ))]/text()').get()
         items['price_before_discount'] = response.xpath(
             '//*[contains(concat( " ", @class, " " ), concat( " ", "productOldPrice", " " ))]/text()').get()
+        items['image_link'] = response.xpath('//*[@id="productInfoDefaultImage"]/a/@href').get()
+        items['page_link'] = response.url
         items['description'] = response.xpath('string(//*[@id="productDescription"])').get()
         product_specifications_dic = {}
         for t in response.xpath('//*[@class="field-row"]'):
